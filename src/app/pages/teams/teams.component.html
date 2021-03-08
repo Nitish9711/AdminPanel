@@ -1,0 +1,172 @@
+
+<ng-template #content let-modal>
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Team</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body slide-in-fwd-center">
+
+
+      <form  [formGroup]="form" id="formLogin" name="formLogin" role="form">
+        <!-- <div class="form-group">
+          <label for="uname1">Name </label>
+          <input formControlName="name" class="form-control" id="uname1" name="uname1" required="" type="text">
+        </div> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Ex: INNOVA DTU" formControlName="name" id="uname1" name="uname1">
+        </mat-form-field><br>
+
+        <!-- <div class="form-group">
+          <label>Designation</label>
+          <input  formControlName="designation"class="form-control" id="pwd1" required="" type="text">
+        </div> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Designation</mat-label>
+          <input matInput placeholder="Ex: INNOVA DTU" formControlName="designation" id="pwd1">
+        </mat-form-field><br>
+
+        <!-- <div class="form-group">
+          <label>Linkedin</label>
+          <input formControlName="linkedin"  class="form-control" id="pwd1" required="" type="text">
+        </div> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Linkedin</mat-label>
+          <input matInput placeholder="Ex: linkedin.com/innovadtu" formControlName="linkedin" id="pwd1">
+        </mat-form-field><br>
+
+        <div class="mat-form-field">
+          <button mat-stroked-button class="img-pick" type="button" color="primary" (click)="filePicker.click()">Pick Image</button>
+          <input type="file" name = "image" #filePicker (change)="onImagePicked($event)">
+        </div>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+          <img [src]="imagePreview" [alt]="form.value.title">
+        </div>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').invalid">
+          <mat-error *ngIf="form.get('image').invalid">Please select an Image</mat-error>
+        </div>
+
+
+        <!-- <div class="form-group">
+          <label>Mail Id</label>
+          <input formControlName="mailId" class="form-control" id="pwd1" required="" type="text">
+        </div> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mail Id</mat-label>
+          <input matInput placeholder="Ex: innovadtu2021@gmail.com" formControlName="mailId" id="pwd1">
+        </mat-form-field><br>
+
+        <!-- <div class="form-group">
+          <label>Contact</label>
+          <input formControlName="contact" class="form-control" id="pwd1" required="" type="text">
+        </div> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contact</mat-label>
+          <input matInput placeholder="Phone Number" formControlName="contact" id="pwd1">
+        </mat-form-field><br>
+
+
+
+
+        <div class="modal-footer">
+          <button mat-raised-button color="primary" type="submit" (click)="modal.close('Save click'); onSaveTeam($event)" class="btn-save">Save</button>
+        </div>
+      </form>
+    </div>
+
+</ng-template>
+
+<!-- <button mat-raised-button color="primary" (click)="open(content)">Add Lecture</button> -->
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style="text-align: center;">Team List</h4>
+      </div>
+     <div><button mat-raised-button color="primary" class="add-btn" (click)="open(content)"><span class="material-icons">
+        add_circle
+        </span> Add Team</button></div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table" multi = "true" *ngIf = "teams.length > 0 && !isLoading" >
+            <thead class=" text-primary">
+              <th>
+                Name
+              </th>
+              <th>
+                Designation
+              </th>
+              <th>
+                Linkedin
+              </th>
+              <th>
+                contact
+              </th>
+              <th>
+                mail Id
+              </th>
+              <th>
+                Image Preview
+              </th>
+              <th>
+                Action
+              </th>
+            </thead>
+            <tbody>
+
+
+              <tr *ngFor="let team of teams">
+                <td>
+                  {{ team.name }}
+                </td>
+                <td>
+                  {{ team.designation}}
+                </td>
+                <td>
+                  {{ team.linkedin}}
+                </td>
+
+                <td>
+                  {{ team.contact }}
+                </td>
+                <td>
+                  {{ team.mailId }}
+                </td>
+                <td>
+                  <img class = "image-preview" [src]="team.imagePath" [alt]="team.name">
+                </td>
+                <td>
+                  <button mat-raised-button  (click)="onEditTeam(team._id); open(content)" color="primary" style="margin: 5px;" >
+                    <span class="material-icons">
+                      edit
+                    </span>
+                  </button>
+                  <button mat-raised-button color="warn" style="margin: 5px;" (click)="onDeleteTeam(team._id)">
+                    <span class="material-icons">
+                      delete
+                    </span>
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

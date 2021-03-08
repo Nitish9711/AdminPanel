@@ -1,0 +1,55 @@
+.add-btn{
+  width: min-content;
+  margin-left: 20px;
+}
+
+.btn-save {
+  padding: 5px 15px;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.calendar{
+  padding: 5px 6px 0;
+  /* top left+right bottom */
+
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.close {
+  outline: none;
+  color: gray;
+}
+
+.close:hover {
+  color: black;
+}
+
+.img-pick {
+  margin-top: 15px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.status{
+  margin: 20px;
+  font-size: 13px;
+  position: relative;
+  top: 3px;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
