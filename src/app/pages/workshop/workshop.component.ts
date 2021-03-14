@@ -101,7 +101,7 @@ export class WorkshopComponent implements OnInit {
   }
 
   onSaveWorkshop(event: Event){
-    console.log(this.form.value);
+    // console.log(this.form.value);
     if (this.form.invalid) {
       return;
     }

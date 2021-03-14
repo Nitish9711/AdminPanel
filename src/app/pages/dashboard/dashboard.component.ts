@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit ,OnDestroy{
       this.dashboardsService.getCount().subscribe(Data => {
         // console.log(Data);
         this.dashboard = Data.number;
-        console.log(this.dashboard);
+        // console.log(this.dashboard);
         this.isLoading = false;
 
       }
@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit ,OnDestroy{
 
 
       ngOnDestroy() {
-        
+
         this.authStatusSub.unsubscribe();
       }
 }

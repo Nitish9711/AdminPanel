@@ -21,7 +21,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Content</mat-label>
-        <input matInput placeholder="Profession" formControlName="content" id="pwd1">
+        <textarea matInput placeholder="Profession" formControlName="content" id="pwd1"></textarea>
       </mat-form-field><br>
 
 
@@ -45,7 +45,7 @@
 
 
       <div class="modal-footer">
-        <button  mat-raised-button color="primary" type="submit" (click)="modal.close('Save click'); onSendMail($event)" class="btn-save">Save</button>
+        <button  mat-raised-button color="primary" type="submit" (click)="modal.close('Save click'); onSendMail($event)" class="btn-save">SEND MAIL</button>
       </div>
 
     </form>

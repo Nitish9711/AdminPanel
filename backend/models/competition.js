@@ -11,7 +11,7 @@ const competitionSchema = mongoose.Schema({
     day: {type : String, requied: true}
   },
   regLink: {type: String, required: true},
-  time: {type: String, required: true},
+  time: {type: String, required: true}
 });
 
 module.exports = mongoose.model("Competition", competitionSchema);
