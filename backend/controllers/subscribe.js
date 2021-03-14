@@ -223,16 +223,16 @@ exports.sendmails = async (req, res, next) => {
             <div class="msg">Connect with us</div>
             <div>
                 <ul class="fb" >
-                  <li><a href="https://www.facebook.com/innovadtu"><img src="cid:fb@innova.ee" alt=""></a></li>
+                  <li><a href="https://www.facebook.com/"><img src="cid:fb@innova.ee" alt=""></a></li>
               </ul>
               <ul class="ig" >
-                  <li><a href="https://www.instagram.com/innovadtu/"><img src="cid:insta@innova.ee" alt=""></a></li>
+                  <li><a href="https://www.instagram.com/"><img src="cid:insta@innova.ee" alt=""></a></li>
               </ul>
               <ul class="ig" >
-                  <li><a href="https://www.linkedin.com/company/innova-dtu/mycompany/"><img src="cid:in@innova.ee" alt=""></a></li>
+                  <li><a href="https://www.linkedin.com/company/"><img src="cid:in@innova.ee" alt=""></a></li>
               </ul>
               <ul class="yt" >
-                  <li><a href="https://www.youtube.com/channel/UCz52tpa7b4vV24SbgreRiuA"><img src="cid:youtube@innova.ee" alt=""></a></li>
+                  <li><a href="https://www.youtube.com/channel/"><img src="cid:youtube@innova.ee" alt=""></a></li>
               </ul>
             </div>
           </footer>
