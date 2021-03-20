@@ -14,6 +14,7 @@ const lectureSchema = mongoose.Schema({
   regLink: {type: String, required: true},
   imagePath: { type: String, required: true },
   time: {type: String, required: true},
+  
 });
 
 

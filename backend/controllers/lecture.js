@@ -72,7 +72,8 @@ exports.addLectures = async (req, res, next) => {
       regLink: req.body.regLink,
       status: req.body.status,
       imagePath: url + "/images/lectures/" + req.file.filename,
-      time: req.body.time
+      time: req.body.time,
+      
     });
     // imagePath: result.public_id,
 
