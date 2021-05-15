@@ -16,4 +16,4 @@ const competitionSchema = mongoose.Schema({
 
 module.exports = mongoose.model("Competition", competitionSchema);
 
-// date: {type: String, required: true},
+

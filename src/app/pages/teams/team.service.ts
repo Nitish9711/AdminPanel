@@ -25,7 +25,7 @@ export class TeamsService {
     .pipe(
       map(teamData => {
         return teamData.teams.map(team => {
-          // console.log(lecture);
+         
           return {
             _id: team._id,
             name: team.name,
@@ -40,7 +40,7 @@ export class TeamsService {
     )
     .subscribe(transformedPosts => {
       this.teams = transformedPosts;
-      // console.log(this.lectures);
+      
       this.teamUpdated.next([...this.teams]);
     });
 
@@ -81,8 +81,7 @@ export class TeamsService {
         teamData
       )
       .subscribe(temp => {
-        // console.log(responseData);
-        console.log(temp["b"]);
+       
 
         this.teams.push(temp["b"]);
         this.teamUpdated.next([...this.teams]);
@@ -128,14 +127,10 @@ export class TeamsService {
       .subscribe(temp => {
         const updatedTeams = [...this.teams];
         const oldPostIndex = updatedTeams.findIndex(p => p._id === team._id);
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        // console.log(temp["b"]);
-        // console.log(oldPostIndex);
-        // console.log(updatedLectures[oldPostIndex]);
+       
         updatedTeams[oldPostIndex] = temp["b"];
         this.teams = updatedTeams;
-        // this.lectures.push(temp["b"]);
+      
         this.teamUpdated.next([...this.teams]);
         }
 

@@ -14,4 +14,4 @@ export interface Lecture {
   time: string
 }
 
-// time: string,
+

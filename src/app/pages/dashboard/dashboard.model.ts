@@ -7,4 +7,3 @@ export interface Dashboard {
   SponsorCount:string,
 }
 
-// time: string,

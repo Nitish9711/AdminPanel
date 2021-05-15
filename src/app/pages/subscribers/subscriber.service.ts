@@ -26,7 +26,7 @@ export class SubscribersService {
     .pipe(
       map(subscriberData => {
         return subscriberData.subscribers.map(subscriber => {
-          // console.log(lecture);
+         
           return {
             name: subscriber.name,
             phone: subscriber.phone,
@@ -38,7 +38,7 @@ export class SubscribersService {
     .subscribe(transformedPosts => {
       this.subscribers = transformedPosts;
 
-      // console.log(this.lectures);
+     
       this.subscribersUpdated.next([...this.subscribers]);
     });
 
@@ -53,11 +53,11 @@ export class SubscribersService {
     subscriberData.append("title", subscriber.name);
     subscriberData.append("description", subscriber.phone);
     subscriberData.append("status", subscriber.email);
-    console.log(subscriber);
-    // competitionData.append("imagePath", competition.image, competition.name);
+   
+   
 
 
-// console.log(competition);
+
 
     this.http
       .post(
@@ -67,7 +67,7 @@ export class SubscribersService {
       .subscribe(temp => {
 
 
-        console.log(temp["b"]);
+       
 
         this.subscribers.push(temp["b"]);
         this.subscribersUpdated.next([...this.subscribers]);
@@ -80,7 +80,7 @@ export class SubscribersService {
     mailData.append("subject", mailContent.subject);
     mailData.append("content", mailContent.content);
     mailData.append("imagePath", mailContent.image, mailContent.subject);
-    console.log(mailContent);
+   
 
     this.http
       .post(
@@ -88,13 +88,10 @@ export class SubscribersService {
         mailData
       ) .subscribe(temp => {
 
-        // console.log(responseData)
-        // // console.log("dkfsa" );
-        // console.log(temp["b"]);
-        console.log(temp);
+       
+       
 
-        // this.subscribers.push(temp["b"]);
-        // this.subscribersUpdated.next([...this.subscribers]);
+       
 
     });;
   }

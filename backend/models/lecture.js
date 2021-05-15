@@ -13,13 +13,12 @@ const lectureSchema = mongoose.Schema({
   },
   regLink: {type: String, required: true},
   imagePath: { type: String, required: true },
+  cloudImageId : String,
   time: {type: String, required: true},
   
 });
 
 
-// date: {
-//   type: String, required: true
-// },
+
 
 module.exports = mongoose.model("Lecture", lectureSchema);

@@ -7,8 +7,7 @@ const cors = require('cors')
 
 const dotenv = require('dotenv')
 
-// const session = require('express-session');
-// const flash = require('connect-flash');
+
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const nodemailerConfig = require('./nodemailerConfig');
@@ -40,7 +39,7 @@ mongoose
     console.log("Connection failed!");
   });
 
-// app.use(bodyParser.json());
+
 
 app.use(cors())
 
@@ -61,24 +60,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname,'public')));
-// app.use("/images",  cors(),express.static(path.join("backend/images")));
-// app.use("/images",  cors(),express.static(path.join("images")));
+
 app.use("/images",  cors(),express.static(path.join("images")));
 app.use("/",  cors(),express.static(path.join(__dirname,"angular")));
 
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-//   );
-//   next();
-// });
 
 
 
@@ -99,13 +85,10 @@ app.use("/api/competitions",  cors(),competitionRoutes);
 app.use("/api/sponsors",  cors(),sponsorRoutes);
 app.use("/api/dashboards",  cors(),dashboardRoutes);
 app.use("/api/subscriber", cors(), subscriberRoutes);
-// app.use("/", (req, res, next) =>{
-//   // res.status(201).json({
-//   //   working: "api is working"
-//   // })
-// })
-app.use((req, res, next) =>{
-  req.sendFile(path.join( __dirname, "angular", "index.html"));
+
+
+app.use((req, res) =>{
+  res.sendFile(path.join( __dirname, "angular", "index.html"));
 })
 
 

@@ -1,12 +1,11 @@
 const express = require("express");
 const multer = require("multer");
 const Subscribe = require("../models/subscribe");
-const fs= require('fs');
-const path = require('path');
-const nodemailer = require('nodemailer')
+const fs = require("fs");
+const path = require("path");
+const nodemailer = require("nodemailer");
 const Subscriber = require("../models/subscriber");
-const config = require('../nodemailerConfig.json');
-// const { type } = require("jquery");
+const config = require("../nodemailerConfig.json");
 
 const router = express.Router();
 
@@ -42,8 +41,7 @@ exports.sendmails = async (req, res, next) => {
 
 
   b = req.body;
-  console.log("sending mails");
-  console.log(b);
+  
   subscribe.save().then((createSubscribe) => {
     res.status(201).json({
       message: "Subscribe added successfully",
@@ -51,9 +49,7 @@ exports.sendmails = async (req, res, next) => {
     });
   });
 
-  // console.log(req.body);
-  // console.log(req.file)
-  // console.log(req.file.path)
+
   if (!req.body.content || !req.body.subject) {
     res.status(400).send("ERROR: Some form data is missing.");
   }
@@ -69,27 +65,25 @@ exports.sendmails = async (req, res, next) => {
     },
   });
 
-  //for sending multiple recipients simply assign array of mails to 'to'
-  // const mailList = ["nitishkumar12c@gmail.com"];
+  
   var mailList = [];
-  //  console.log(typeof(mailList));
+  
    Subscriber.find().then(document =>{
     for(i =  0;i<document.length;i++){
 
-      console.log(document[i]["email"]);
+      
       mailList.push(document[i].email);
-      // console.log(mailList + "mia");
+      
     }
     return mailList;
   })
   .then((mailList) =>{
-    // console.log(mailList + "niche hui hai");
+   
     const mailOptions = {
       from: config.fromMail,
       to: mailList,
       subject: req.body.subject,
-      // Email body.
-      // text: req.body.content,
+      
       html: `<!DOCTYPE html>
       <html lang="en">
       <head>
@@ -213,8 +207,8 @@ exports.sendmails = async (req, res, next) => {
             </div>
         <section class="mail">
 
-          <div class="line1" > <b>Thank you for becoming a part of the INNOVA family.</b> </div>
-         <div class="line2" >We at INNOVA aspire to organize the greatest Techno-Management fest in India and for that we hold events that actually add value to your life . Our latest event is in line with these values.
+          <div class="line1" > <b>Thank you for becoming a part of the family.</b> </div>
+         <div class="line2" >We aspire to organize the greatest Techno-Management fest in India and for that we hold events that actually add value to your life . Our latest event is in line with these values.
             About event <br></div>` + req.body.content +
           `<br><br><div class="line3">  We are looking forward to your presence in our latest event</div>
         </section>
@@ -241,7 +235,7 @@ exports.sendmails = async (req, res, next) => {
         </body>
           </html>`,
 
-      //array of objects for attachments
+     
       attachments: [
         {
           filename: "",
@@ -284,13 +278,13 @@ exports.sendmails = async (req, res, next) => {
           .send(`Something went wrong. Unable to send email\nERROR:\n${error}`);
         } else {
         console.log(`Email sent: ${info.response}`);
-        // console.log(mailList);
+        
       }
     });
 
   })
 
 
-  // console.log(maildoc)
+
 
 };

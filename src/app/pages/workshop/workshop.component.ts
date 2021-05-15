@@ -85,7 +85,7 @@ export class WorkshopComponent implements OnInit {
         this.isLoading = false;
         this.workshops = workshops;
       });
-      // console.log(lectures);
+     
   }
 
 
@@ -101,12 +101,12 @@ export class WorkshopComponent implements OnInit {
   }
 
   onSaveWorkshop(event: Event){
-    // console.log(this.form.value);
+    
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
-    // event.preventDefault();
+   
     if(this.mode === "create"){
       this.workshopId = null
 
@@ -126,10 +126,10 @@ export class WorkshopComponent implements OnInit {
       "image": this.form.value.image,
       "time":this.form.value.time
     }
-    // "imagePath": this.form.value.name
+   
 
     if(this.mode === 'create' ){
-      // console.log(this.form.value.date);
+     
 
       this.workshopsService.addWorkshop(workshop,this.form.value.image);
       this.isLoading = false;
@@ -150,7 +150,7 @@ export class WorkshopComponent implements OnInit {
   onEditWorkshop(id){
 
     this.workshopId = id;
-    // this.lecturesService.findLecture(id);
+   
     this.mode = "edit";
     this.isLoading = true;
         this.workshopsService.findWorkshop(this.workshopId).subscribe(workshopData => {
@@ -170,7 +170,7 @@ export class WorkshopComponent implements OnInit {
             regLink: workshopData.regLink,
             time: workshopData.time
           };
-          // console.log(this.lecture);
+         
           this.imagePreview = this.workshop.imagePath;
           this.form.setValue(
           {

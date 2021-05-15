@@ -81,7 +81,7 @@ export class SubscribersComponent implements OnInit {
   }
 
   onSendMail(event: Event){
-    // console.log(this.form.value);
+   
     this.isLoading = true;
     let mailContent = {
 

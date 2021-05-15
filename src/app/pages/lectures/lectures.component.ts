@@ -19,7 +19,7 @@ import { DatePipe, getLocaleDateFormat } from '@angular/common';
 })
 
 export class LecturesComponent implements OnInit {
-  // const date: NgbDate = new NgbDate(1789, 7, 14);
+  
   closeResult = '';
   status = "upcoming";
   form: FormGroup;
@@ -62,7 +62,7 @@ export class LecturesComponent implements OnInit {
   ngOnInit(): void
   {
 
-    // console.log(getLocaleDateFormat);
+   
     this.status = "upcoming"
     this.form = new FormGroup(
       {
@@ -84,17 +84,13 @@ export class LecturesComponent implements OnInit {
     )
 
     this.lecturesService.getLectures()
-    // .subscribe(transformedPosts => {
-    //     this.lectures = transformedPosts;
-    //     // console.log(this.lectures);
-    //     // this.lecturesUpdated.next([...this.lectures]);
-    //   });;
+   
     this.lecturesSub = this.lecturesService.getLectureUpdateListener()
       .subscribe((lectures: Lecture[]) => {
         this.isLoading = false;
         this.lectures = lectures;
       });
-      // console.log(lectures);
+     
 
   }
 
@@ -134,10 +130,10 @@ export class LecturesComponent implements OnInit {
       "image": this.form.value.image,
       "time": this.form.value.time
     }
-    // "imagePath": this.form.value.name
+    
 
     if(this.mode === 'create' ){
-      // console.log(this.form.value.date);
+     
 
       this.lecturesService.addLecture(lecture,this.form.value.image);
       
@@ -158,7 +154,7 @@ export class LecturesComponent implements OnInit {
   onEditLecture(id){
 
     this.lectureId = id;
-    // this.lecturesService.findLecture(id);
+    
     this.mode = "edit";
     this.isLoading = true;
         this.lecturesService.findLecture(this.lectureId).subscribe(lectureData => {
@@ -178,7 +174,7 @@ export class LecturesComponent implements OnInit {
             regLink: lectureData.regLink,
             time: lectureData.time
           };
-          // console.log(this.lecture);
+         
           this.imagePreview = this.lecture.imagePath;
           this.form.setValue(
           {
@@ -196,6 +192,6 @@ export class LecturesComponent implements OnInit {
 
   }
   ngOnDestroy() {
-    // this.lecturesSub.unsubscribe();
+   
   }
 }

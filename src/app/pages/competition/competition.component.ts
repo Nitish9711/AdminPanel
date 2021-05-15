@@ -61,7 +61,7 @@ export class CompetitionComponent implements OnInit {
   ngOnInit(): void
   {
 
-    // console.log(getLocaleDateFormat);
+    
     this.status = "upcoming"
     this.form = new FormGroup(
       {
@@ -88,7 +88,7 @@ export class CompetitionComponent implements OnInit {
         this.isLoading = false;
         this.competitions = competitions;
       });
-      // console.log(lectures);
+     
 
   }
 
@@ -152,7 +152,7 @@ export class CompetitionComponent implements OnInit {
   onEditCompetition(id){
 
     this.competitionId = id;
-    // this.lecturesService.findLecture(id);
+   
     this.mode = "edit";
     this.isLoading = true;
         this.competitionsService.findCompetition(this.competitionId).subscribe(competitionData => {
@@ -172,9 +172,9 @@ export class CompetitionComponent implements OnInit {
             regLink: competitionData.regLink,
             time:competitionData.time
           };
-          // console.log(this.lecture);
+         
           this.imagePreview = this.competition.imagePath;
-          // status: this.competition.status,
+          
           this.form.setValue(
           {
             title:this.competition.title,

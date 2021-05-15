@@ -12,4 +12,4 @@ export interface Competition {
   regLink: string,
   time: string,
 }
-// time: string,
+

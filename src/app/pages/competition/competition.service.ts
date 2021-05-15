@@ -24,7 +24,7 @@ export class CompetitionsService {
     .pipe(
       map(competitionData => {
         return competitionData.competitions.map(competition => {
-          // console.log(lecture);
+          
           return {
             _id: competition._id,
             title: competition.title,
@@ -40,7 +40,7 @@ export class CompetitionsService {
     )
     .subscribe(transformedPosts => {
       this.competitions = transformedPosts;
-      // console.log(this.lectures);
+      
       this.competitionsUpdated.next([...this.competitions]);
     });
 
@@ -77,17 +77,14 @@ export class CompetitionsService {
     competitionData.append("imagePath", competition.image, competition.name);
     competitionData.append("status", competition.status);
     competitionData.append("date", competition.date);
-    // competitionData.append("time", competition.time);
+   
     competitionData.append("regLink", competition.regLink);
     competitionData.append("year", competition.date.year);
     competitionData.append("month", competition.date.month);
     competitionData.append("day", competition.date.day);
     competitionData.append("time", competition.time);
 
-    // competitionData.append("imagePath", competition.image, competition.name);
-
-
-// console.log(competition);
+   
 
     this.http
       .post(
@@ -96,9 +93,8 @@ export class CompetitionsService {
       )
       .subscribe(temp => {
 
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        console.log(temp["b"]);
+        
+       
 
         this.competitions.push(temp["b"]);
         this.competitionsUpdated.next([...this.competitions]);
@@ -125,7 +121,7 @@ export class CompetitionsService {
         CompetitionData.append("description", competition.description);
         CompetitionData.append("imagePath", competition.image, competition.name);
         CompetitionData.append("status", competition.status);
-        // CompetitionData.append("date", competition.date);
+        
         CompetitionData.append("year", competition.date.year);
         CompetitionData.append("month", competition.date.month);
         CompetitionData.append("day", competition.date.day);
@@ -140,7 +136,7 @@ export class CompetitionsService {
             description: competition.description,
             imagePath: competition.imagePath,
             status: competition.status,
-            // date: competition.date,
+           
             date:{
               day: competition.date.day,
               year: competition.date.year,
@@ -149,21 +145,17 @@ export class CompetitionsService {
             regLink: competition.regLink,
             time: competition.time
           };
-          // time: competition.time,
+          
     }
     this.http
       .put(BACKEND_URL + competition._id, CompetitionData)
       .subscribe(temp => {
         const updatedCompetitions = [...this.competitions];
         const oldPostIndex = updatedCompetitions.findIndex(p => p._id === competition._id);
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        // console.log(temp["b"]);
-        // console.log(oldPostIndex);
-        // console.log(updatedLectures[oldPostIndex]);
+       
         updatedCompetitions[oldPostIndex] = temp["b"];
         this.competitions = updatedCompetitions;
-        // this.lectures.push(temp["b"]);
+       
         this.competitionsUpdated.next([...this.competitions]);
         }
       );

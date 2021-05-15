@@ -23,7 +23,7 @@ export class LecturesService {
     .pipe(
       map(lectureData => {
         return lectureData.lectures.map(lecture => {
-          // console.log(lecture);
+         
           return {
             name: lecture.name,
             profession: lecture.profession,
@@ -40,7 +40,7 @@ export class LecturesService {
     )
     .subscribe(transformedPosts => {
       this.lectures = transformedPosts;
-      // console.log(this.lectures);
+      
       this.lecturesUpdated.next([...this.lectures]);
     });
 
@@ -87,9 +87,8 @@ export class LecturesService {
       )
       .subscribe(temp => {
 
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        console.log(temp["b"]);
+       
+        
 
         this.lectures.push(temp["b"]);
         this.lecturesUpdated.next([...this.lectures]);
@@ -146,14 +145,10 @@ export class LecturesService {
 
         const updatedLectures = [...this.lectures];
         const oldPostIndex = updatedLectures.findIndex(p => p._id === lecture._id);
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        // console.log(temp["b"]);
-        // console.log(oldPostIndex);
-        // console.log(updatedLectures[oldPostIndex]);
+       
         updatedLectures[oldPostIndex] = temp["b"];
         this.lectures = updatedLectures;
-        // this.lectures.push(temp["b"]);
+       
         this.lecturesUpdated.next([...this.lectures]);
       }
 

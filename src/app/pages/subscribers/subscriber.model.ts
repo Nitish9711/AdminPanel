@@ -3,4 +3,4 @@ export interface Subscriber {
   phone: string,
   email: string
 }
-// time: string,
+

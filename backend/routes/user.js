@@ -6,31 +6,27 @@ const User = require("../models/user");
 
 const router = express.Router();
 
-// router.post("/signup", (req, res, next) => {
-//   bcrypt.hash(req.body.password, 10).then(hash => {
-//     const user = new User({
-//       email: req.body.email,
-//       password: hash
-//     });
-//     user
-//       .save()
-//       .then(result => {
-//         res.status(201).json({
-//           message: "User created!",
-//           result: result
-//         });
-//       })
-//       .catch(err => {
-//         res.status(500).json({
-//           error: err
-//         });
-//       });
-//   });
-// });
+
+router.post("/createUser", async (req,res,next) => {
+  const {  email, password} = req.body;
+  
+  
+   
+  try {
+      const existingUser = await User.findOne({ email });
+      if(existingUser) return res.status(400).json({message: "User already exists"});
+      const hashedPassword = await bcrypt.hash(password, 12);
+      const result = await User.create({email, password: hashedPassword});
+      
+      res.status(200).json({result : result, message:"User added successfully"});
+  } catch (error) {
+      res.status(500).json({ message: 'Something went wrong.'});
+  }
+})
+
 
 router.post("/login", (req, res, next) => {
-  console.log(req.body.email);
-  console.log(req.body.password);
+ 
   let fetchedUser;
 
   User.findOne({ email: req.body.email })
@@ -41,11 +37,11 @@ router.post("/login", (req, res, next) => {
         });
       }
       fetchedUser = user;
-      console.log("user found");
+     
       return bcrypt.compare(req.body.password, user.password);
     })
     .then(result => {
-      console.log(result);
+     
       if (!result) {
         return res.status(401).json({
           message: "password match failed"

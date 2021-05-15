@@ -31,6 +31,7 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LecturesComponent } from './pages/lectures/lectures.component';
+import { CredentialsComponent } from './pages/auth/credentials/credentials.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from '@angular/material/button';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
@@ -54,7 +55,8 @@ import { AuthGuard } from "../app/pages/auth/auth.guard";
     SponsorsComponent,
     CompetitionComponent,
     LoginComponent,
-    SubscribersComponent
+    SubscribersComponent,
+    CredentialsComponent
   ],
   imports: [
 

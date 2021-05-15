@@ -24,7 +24,7 @@ export class SponsorsService {
     .pipe(
       map(sponsorData => {
         return sponsorData.sponsors.map(sponsor => {
-          // console.log(lecture);
+          
           return {
             _id: sponsor._id,
             sponsorName: sponsor.sponsorName,
@@ -39,7 +39,7 @@ export class SponsorsService {
     )
     .subscribe(transformedPosts => {
       this.sponsors = transformedPosts;
-      // console.log(this.lectures);
+     
       this.sponsorsUpdated.next([...this.sponsors]);
     });
 
@@ -73,7 +73,7 @@ export class SponsorsService {
     sponsorData.append("year", sponsor.year);
     sponsorData.append("link", sponsor.link);
 
-      // console.log(sponsor);
+     
 
     this.http
       .post(
@@ -81,8 +81,8 @@ export class SponsorsService {
         sponsorData
       )
       .subscribe(temp => {
-        // console.log(responseData);
-        console.log(temp["b"]);
+       
+       
 
         this.sponsors.push(temp["b"]);
         this.sponsorsUpdated.next([...this.sponsors]);
@@ -128,14 +128,10 @@ export class SponsorsService {
       .subscribe(temp => {
         const updatedSponsor = [...this.sponsors];
         const oldPostIndex = updatedSponsor.findIndex(p => p._id === sponsor._id);
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        // console.log(temp["b"]);
-        // console.log(oldPostIndex);
-        // console.log(updatedLectures[oldPostIndex]);
+      
         updatedSponsor[oldPostIndex] = temp["b"];
         this.sponsors = updatedSponsor;
-        // this.lectures.push(temp["b"]);
+       
         this.sponsorsUpdated.next([...this.sponsors]);
         }
 

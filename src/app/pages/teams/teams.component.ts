@@ -82,7 +82,7 @@ export class TeamsComponent implements OnInit {
         this.isLoading = false;
         this.teams = teams;
       });
-      // console.log(lectures);
+      
   }
 
 
@@ -98,12 +98,12 @@ export class TeamsComponent implements OnInit {
   }
 
   onSaveTeam(event: Event){
-    // console.log(this.form.value);
+   
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
-    // event.preventDefault();
+   
     if(this.mode === "create"){
       this.teamId = null
 
@@ -121,10 +121,10 @@ export class TeamsComponent implements OnInit {
       "contact": this.form.value.contact,
       "image": this.form.value.image
     }
-    // "imagePath": this.form.value.name
+    
 
     if(this.mode === 'create' ){
-      // console.log(this.form.value.date);
+     
 
       this.teamsService.addTeam(workshop,this.form.value.image);
       this.isLoading = false;
@@ -145,7 +145,7 @@ export class TeamsComponent implements OnInit {
   onEditTeam(id){
 
     this.teamId = id;
-    // this.lecturesService.findLecture(id);
+   
     this.mode = "edit";
     this.isLoading = true;
         this.teamsService.findTeam(this.teamId).subscribe(teamData => {
@@ -159,7 +159,7 @@ export class TeamsComponent implements OnInit {
             mailId: teamData.mailId,
             contact: teamData.contact
           };
-          // console.log(this.lecture);
+         
           this.imagePreview = this.team.imagePath;
           this.form.setValue(
           {

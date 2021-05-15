@@ -82,7 +82,7 @@ export class SponsorsComponent implements OnInit {
         this.isLoading = false;
         this.sponsors = sponsors;
       });
-      // console.log(lectures);
+     
   }
 
 
@@ -98,12 +98,12 @@ export class SponsorsComponent implements OnInit {
   }
 
   onSaveSponsor(event: Event){
-    // console.log(this.form.value);
+   
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
-    // event.preventDefault();
+    
     if(this.mode === "create"){
       this.sponsorId = null
 
@@ -121,10 +121,10 @@ export class SponsorsComponent implements OnInit {
       "image": this.form.value.image,
       "status": this.status
     }
-    // "imagePath": this.form.value.name
+   
 
     if(this.mode === 'create' ){
-      // console.log(this.form.value.date);
+      
 
       this.sponsorsService.addSponsor(sponsor,this.form.value.image);
       this.isLoading = false;
@@ -145,7 +145,7 @@ export class SponsorsComponent implements OnInit {
   onEditSponsor(id){
 
     this.sponsorId = id;
-    // this.lecturesService.findLecture(id);
+    
     this.mode = "edit";
     this.isLoading = true;
         this.sponsorsService.findSponsor(this.sponsorId).subscribe(sponsorData => {
@@ -159,7 +159,7 @@ export class SponsorsComponent implements OnInit {
             link: sponsorData.link,
             status: this.status
           };
-          // console.log(this.lecture);
+          
           this.imagePreview = this.sponsor.imagePath;
           this.form.setValue(
           {

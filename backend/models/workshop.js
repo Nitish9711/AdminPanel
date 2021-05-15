@@ -17,4 +17,4 @@ const workshopSchema = mongoose.Schema({
 
 module.exports = mongoose.model("Workshop", workshopSchema);
 
-// date: {type: String, required: true},
+

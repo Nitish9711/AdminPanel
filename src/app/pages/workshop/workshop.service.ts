@@ -23,7 +23,7 @@ export class WorkshopsService {
     .pipe(
       map(workshopData => {
         return workshopData.workshops.map(workshop => {
-          // console.log(workshop);
+         
           return {
             _id:workshop._id,
             title:workshop.title,
@@ -40,7 +40,7 @@ export class WorkshopsService {
     )
     .subscribe(transformedWorkshops => {
       this.workshops = transformedWorkshops;
-      // console.log(this.workshops);
+     
       this.workshopsUpdated.next([...this.workshops]);
     });
 
@@ -77,7 +77,7 @@ export class WorkshopsService {
     workshopData.append("description", workshop.description);
     workshopData.append("imagePath", workshop.image, workshop.name);
     workshopData.append("price", workshop.price);
-    // workshopData.append("date", workshop.date);
+    
     workshopData.append("year", workshop.date.year);
     workshopData.append("month", workshop.date.month);
     workshopData.append("day", workshop.date.day);
@@ -93,9 +93,8 @@ export class WorkshopsService {
       )
       .subscribe(temp => {
 
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        console.log(temp["b"]);
+       
+       
 
         this.workshops.push(temp["b"]);
         this.workshopsUpdated.next([...this.workshops]);
@@ -122,7 +121,7 @@ export class WorkshopsService {
       WorkshopData.append("description", workshop.description);
       WorkshopData.append("imagePath", workshop.image, workshop.name);
       WorkshopData.append("price", workshop.price);
-      // WorkshopData.append("date", workshop.date);
+      
       WorkshopData.append("year", workshop.date.year);
     WorkshopData.append("month", workshop.date.month);
     WorkshopData.append("day", workshop.date.day);
@@ -153,14 +152,10 @@ export class WorkshopsService {
 
         const updatedWorkshops = [...this.workshops];
         const oldPostIndex = updatedWorkshops.findIndex(p => p._id === workshop._id);
-        // console.log(responseData)
-        // console.log("dkfsa" );
-        console.log(temp["b"]);
-        console.log(oldPostIndex);
-        console.log(updatedWorkshops[oldPostIndex]);
+       
         updatedWorkshops[oldPostIndex] = temp["b"];
         this.workshops = updatedWorkshops;
-        // this.lectures.push(temp["b"]);
+        
         this.workshopsUpdated.next([...this.workshops]);
       }
 

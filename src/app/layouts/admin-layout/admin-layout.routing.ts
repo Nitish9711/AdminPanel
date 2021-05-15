@@ -11,7 +11,8 @@ import { SponsorsComponent } from '../../pages/sponsors/sponsors.component';
 import { CompetitionComponent } from '../../pages/competition/competition.component';
 import { SubscribersComponent } from '../../pages/subscribers/subscribers.component';
 import { AuthGuard } from "../../pages/auth/auth.guard";
-// import { LoginComponent } from '../../pages/auth/login/login.component';
+import { CredentialsComponent } from "../../pages/auth/credentials/credentials.component";
+
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -21,6 +22,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'teams',        component: TeamsComponent },
     { path: 'sponsors',        component: SponsorsComponent },
     { path: 'competition',        component: CompetitionComponent  },
-     {path: 'subscribers',                  component:SubscribersComponent}
+    {path: 'subscribers',                  component:SubscribersComponent},
+    {path: 'credentials',                  component:CredentialsComponent}
 ];
 

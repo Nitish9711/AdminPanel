@@ -34,9 +34,9 @@ export class DashboardComponent implements OnInit ,OnDestroy{
     ngOnInit(){
       this.isLoading = true;
       this.dashboardsService.getCount().subscribe(Data => {
-        // console.log(Data);
+       
         this.dashboard = Data.number;
-        // console.log(this.dashboard);
+       
         this.isLoading = false;
 
       }
