@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "authon": "Nitish Kumar",
+ 
   "scripts": {
     "dev": "npm run development",
     "start": "electron .",
     "dist":"electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nitish Kumar and Naveen Kumar",
   "license": "ISC",
   "devDependencies": {
     "cross-env": "^7.0.3",

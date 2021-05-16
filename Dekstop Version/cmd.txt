@@ -1,4 +1,5 @@
-electron-packager . dekstopapplication --all --asar --icon=admin-logo.ico
+For making an electron app
+1. electron-packager . dekstopapplication --all --asar --icon=admin-logo.ico
 
-
-npm run dist
+For creating installer
+2. npm run dist
