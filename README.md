@@ -16,7 +16,7 @@
   - [About](#about)
   - [Screenshots](#screenshots)
   - [Installation Prerequisites](#installation-prerequisites)
-  - [How to Run this for your own society](#how-to-run-for-own-society)
+  - [How to use this for your own society](#how-to-use-for-own-society)
   - [Technology Stack](#technology-stack)
   - [Contributors](#contributors)
 
@@ -57,15 +57,33 @@ The purpose of this project is to make management of data easy for a a society/c
 
 > To install Mongodb [Go to this Website](https://docs.mongodb.com/manual/administration/install-community/)
 
-## How to Run this Website Locally
+## How to Run this for your own society
 
+For Website
 1. Clone this Repo to your Local Machine.
-2. Open The Terminal/CMD in the folder Janhit-Welfare.
-3. Type ```mongod``` in your Terminal to Run mongodb Server (Ignore if already Running).
-4. Type ```cd backend/jwa && npm install``` to download all the library.
-5. Type ```npm start``` to run the nodejs server.
-6. Open [localhost:300](localhost:3000/) in your browser.
-7. Enjoy!!! :tada: :sparkles:
+2. Host the backend folder on you host service provider like heroku , aws etc.
+3. Copy the website link.
+4. Paste the url in ```environment.prod.ts``` file in ```src/environments```. 
+5. Open cmd/Terminal and type ```npm i``` then ```ng build --prod```.
+6. Type ```cd backend```
+7. Type ```npm i```
+8. Go to mongodb atlas [website](https://www.mongodb.com/cloud/atlas) and create your own clusetr
+9. Copy the mongodb cluster link.
+10. Paste it in the config.json file in backend folder.
+11. Now Just deploy the backend folder and you can use it.
+
+
+
+For Desktop application
+1. Go To ```Desktop Version``` folder.
+2. Open CMD/terminal in Desktop Version folder and type ```npm i```.
+3. Paste your website url in 9th line in main.js.
+4. Type ```electron-packager . dekstopapplication --all --asar --icon=admin-logo.ico``` in cmd it will create different folders for different folders.
+
+Optional - For making windows installer 
+1. Follow above steps.
+2. Type ```npm run dist```.
+
 
 ## Technology Stack
 
