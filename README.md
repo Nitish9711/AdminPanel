@@ -1,4 +1,4 @@
-# Admin Portal
+# **Admin Portal**
 
 
 
@@ -8,7 +8,7 @@
 
 
 
-## Table of Contents
+## **Table of Contents**
 
 - [AdminPortal](#AdminPortal)
   - [Table of Contents](#table-of-contents)
@@ -20,7 +20,7 @@
   - [Technology Stack](#technology-stack)
   - [Contributors](#contributors)
 
-## Important Links
+## **Important Links**
 
 [Website Link](https://dbms-project-admin-portal.herokuapp.com/)  
 
@@ -30,12 +30,12 @@
 
 [Linux Zip Folder](https://drive.google.com/file/d/1-Aht0stuyN6mMZr5OO-ZwIEyyJG6A7Yq/view?usp=sharing)
 
-## About
+## **About**
 
 The purpose of this project is to make management of data easy for a a society/club that organizes a lot of events, workshops and competitions for students and professionals. It can be used by the club to manage the details of their events, workshops, competitions, lectures and sponsors in a fast and efficient manner. We have created a user-friendly interface using which one can add new data to the database, remove data from the database and fetch data from the database
 
 
-## Screenshots
+## **Screenshots**
 
 ![Login](./assets/2.png)
 
@@ -47,7 +47,7 @@ The purpose of this project is to make management of data easy for a a society/c
 
 ![Data addition Page](./assets/4.png)
 
-## Installation Prerequisites
+## **Installation Prerequisites**
 
 - Nodejs
 
@@ -57,9 +57,9 @@ The purpose of this project is to make management of data easy for a a society/c
 
 > To install Mongodb [Go to this Website](https://docs.mongodb.com/manual/administration/install-community/)
 
-## How to Run this for your own society
+## **How to Run this for your own society**
 
-For Website
+**For Website**
 1. Clone this Repo to your Local Machine.
 2. Host the backend folder on you host service provider like heroku , aws etc.
 3. Copy the website link.
@@ -74,31 +74,43 @@ For Website
 
 
 
-For Desktop application
+**For Desktop application**
 1. Go To ```Desktop Version``` folder.
 2. Open CMD/terminal in Desktop Version folder and type ```npm i```.
 3. Paste your website url in 9th line in main.js.
-4. Type ```electron-packager . dekstopapplication --all --asar --icon=admin-logo.ico``` in cmd it will create different folders for different folders.
+4. Type ```electron-packager . dekstopapplication --all --asar --icon=admin-logo.ico``` in cmd it will create different folders for different platforms.
 
 Optional - For making windows installer 
 1. Follow above steps.
 2. Type ```npm run dist```.
 
 
-## Technology Stack
+## **Technology Stack**
+<img align="left" alt="Node.js" width="50px" src="./assets/node.png" /> 
+<img align="left" alt="Node.js" width="50px" src="./assets/angular.png"/>
+<img align="left" alt="Node.js" width="50px" src="./assets/mongodb.png"/>
+
+<img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+<img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
+
+<img align="left" alt="MySQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />
+<img align="left" alt="MongoDB" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png" />   
+</br>
+</br>
 
 _The following technologies has been used to make this application -_
-
-Main Tech stack used for the project
-- _NodeJs_
+**Main Tech stack used for the project**
+- _NodeJs_          
 - _angular_
 - _Express_
 - _MongoDB_
 
-Database used
+**Database used**
 - _MongoDB Atlas_
 
-Major libraries used
+**Major libraries used**
 - _express js_
 - _moongoose_
 - _jsonwebtoken_
