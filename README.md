@@ -1,4 +1,5 @@
 # **Admin Portal**
+<link rel="stylesheet" type="text/css" media="all" href="./assets/style.css" />
 
 
 
@@ -86,12 +87,28 @@ Optional - For making windows installer
 
 
 ## **Technology Stack**
-<img align="left" alt="Node.js" width="150px" src="./assets/node.png" /> 
-<img align="left" alt="Node.js" width="150px" src="./assets/angular.png"/>
-<img align="left" alt="Node.js" width="150px" src="./assets/mongodb.png"/>
+<!-- <img align="left" alt="Node.js" width="150px" src="./assets/node.png" />  -->
+<!-- <img align="left" alt="Node.js" width="150px" src="./assets/mongodb.png"/>
+<img align="left" alt="Node.js" width="150px" src="./assets/express.png"/>
+<img align="left" alt="Node.js" width="150px" src="./assets/angular.png"/> -->
 
-</br>
-</br>
+<div class="row">
+  <div class="column">
+    <img  alt="Node.js" width="100px" height = "150" src="./assets/node.png" /> 
+  </div>
+  <div class="column">
+    <img alt="Node.js"width="100px" height = "150" src="./assets/express.png"/>
+  </div>
+  <div class="column">
+   <img  alt="Node.js"width="100px" height = "150"src="./assets/mongodb.png"/>
+  </div>
+  <div class="column">
+   <img  alt="Node.js" width="100px" height = "150" src="./assets/angular.png"/>
+  </div>
+</div>
+
+<!-- </br> -->
+<!-- </br> -->
 
 _The following technologies has been used to make this application -_
 **Main Tech stack used for the project**
