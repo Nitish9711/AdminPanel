@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    "src\\assets": true,
+    "src\\app\\layouts\\admin-layout\\admin-layout.component.spec.ts": true
+  }
+}

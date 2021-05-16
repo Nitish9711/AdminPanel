@@ -23,7 +23,9 @@
 
 ## **Important Links**
 
-[Website Link](https://dbms-project-admin-portal.herokuapp.com/)  
+[Website Link](https://dbms-project-admin-portal.herokuapp.com/) 
+
+[Project Report](https://drive.google.com/file/d/1jtHqoDjH2qFrFABLNNuZYsbUYCg_U4eF/view?usp=sharing)  
 
 [Windows Installer](https://drive.google.com/file/d/11iNJe0W_Gzqcv5yx8HFjk3kuq04pEcl8/view?usp=sharing)
 
@@ -87,6 +89,10 @@ Optional - For making windows installer
 
 
 ## **Technology Stack**
+
+<p align="center">
+  <img width="350" height="300" src="./assets/6.jpg">
+</p>
 
 _The following technologies has been used to make this application_
 

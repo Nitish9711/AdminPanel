@@ -40,8 +40,8 @@ export class CompetitionsService {
     )
     .subscribe(transformedPosts => {
       this.competitions = transformedPosts;
-      
       this.competitionsUpdated.next([...this.competitions]);
+      
     });
 
   }
