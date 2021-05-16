@@ -3,13 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "authon": "Nitish Kumar",
   "scripts": {
+    "dev": "npm run development",
     "start": "electron .",
+    "dist":"electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^12.0.5"
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.5",
+    "electron-builder": "^22.10.5",
+    "laravel-mix": "^6.0.19",
+    "webpack": "^5.37.0"
+  },
+  "build":{
+    "appId": "com.nitish.adminportal",
+    "productName": "AdminPortal",
+    "target" : "NSIS",
+    "icon":"build/admin-logo.png",
+    "directories":{
+      "output" :"build"
+    },
+    "nsis":{
+      "allowToChangeInstallationDirectory":true,
+      "oneClick": false
+    }
   }
+
 }
