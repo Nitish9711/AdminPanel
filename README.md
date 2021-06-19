@@ -119,7 +119,7 @@ _The following technologies has been used to make this application_
 
 [Nitish Kumar](https://github.com/Nitish9711)
 
-[Naveen Kumar](https://github.com/NaveenKumar519)
+
 
 
 
